@@ -1,0 +1,32 @@
+<project name="GoPhysicEngine" default="build-all" basedir=".">
+
+   <property name="appname" value="SIM01"/>
+    
+   <!-- change this if you are not using jetty -->
+
+   <property name="src.dir" value="${basedir}/src"/>
+   <property name="src.docroot" value="${src}/docroot"/>  
+   <property name="build.dir" value="${basedir}/build"/>
+   <property name="build.classes.dir" value="${build.dir}/classes"/>
+
+   <!-- compilation options -->
+
+   <path id="build.path">
+      <pathelement location="${build.classes.dir}"/>
+   </path>
+
+
+   <target name="compile">
+   <mkdir dir="${build.classes.dir}"/>
+   <javac srcdir="${src.dir}"
+      destdir="${build.classes.dir}"
+      debug="on"
+      deprecation="on"
+      classpathref="build.path"
+      optimize="off"
+      includes="*"
+   />
+   </target>
+
+
+</project>
